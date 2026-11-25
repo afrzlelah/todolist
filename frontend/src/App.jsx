@@ -90,7 +90,7 @@ export default function App() {
     );
 
     try {
-      const res = await fetch(`${API_URL}/${id}`, {
+      const res = await fetch(`${API_URL}/api/todos/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ is_completed })
@@ -121,7 +121,7 @@ export default function App() {
     );
 
     try {
-      const res = await fetch(`${API_URL}/${id}`, {
+      const res = await fetch(`${API_URL}/api/todos/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title: newTitle })
@@ -148,7 +148,7 @@ export default function App() {
     setTodos((prev) => prev.filter((t) => t.id !== id));
 
     try {
-      const res = await fetch(`${API_URL}/${id}`, {
+      const res = await fetch(`${API_URL}/api/todos/${id}`, {
         method: 'DELETE'
       });
 
