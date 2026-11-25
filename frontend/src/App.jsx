@@ -4,7 +4,7 @@ import TodoItem from './components/TodoItem.jsx';
 import TodoFilter from './components/TodoFilter.jsx';
 
 // Endpoint Backend API (Bisa disesuaikan lewat variabel environment VITE_API_URL jika di-deploy)
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/todos';
+const API_URL = import.meta.env.VITE_API_URL || 'https://todolist-backend-mu.vercel.app//api/todos';
 
 export default function App() {
   const [todos, setTodos] = useState([]);
@@ -40,7 +40,7 @@ export default function App() {
       console.error('Fetch error:', err);
       setError(
         err.message.includes('Failed to fetch') || err.message.includes('NetworkError')
-          ? 'Tidak dapat terhubung ke server backend di http://localhost:5000. Pastikan server Express aktif dan kredensial Supabase sudah terkonfigurasi di backend/.env.'
+          ? 'Tidak dapat terhubung ke server backend di https://todolist-backend-mu.vercel.app/. Pastikan server Express aktif dan kredensial Supabase sudah terkonfigurasi di backend/.env.'
           : err.message
       );
     } finally {
