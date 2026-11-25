@@ -4,7 +4,7 @@ import TodoItem from './components/TodoItem.jsx';
 import TodoFilter from './components/TodoFilter.jsx';
 
 // Endpoint Backend API (Bisa disesuaikan lewat variabel environment VITE_API_URL jika di-deploy)
-const API_URL = import.meta.env.VITE_API_URL || 'https://todolist-backend-mu.vercel.app//api/todos';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/todos';
 
 export default function App() {
   const [todos, setTodos] = useState([]);
@@ -56,7 +56,7 @@ export default function App() {
   const handleAddTodo = async (title) => {
     try {
       setSubmitting(true);
-      const res = await fetch(`${API_URL}/api/todos`, {
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title })
